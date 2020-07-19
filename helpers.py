@@ -22,6 +22,5 @@ def threadHelper(line):
     time.sleep(random.randint(1, 10))
     hashes = []
     for i in calculateLine(line):
-        hashes.append(i)
-        for s in range(100000):
-            hashes.append(hashlib.sha1(str(i + str(s) * s).encode()).hexdigest())
+        for s in range(1000000):
+            hashes.append(i + str(s) * s)
